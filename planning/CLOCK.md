@@ -11,3 +11,6 @@
 | Extraction modules + smoke script ready; smoke handed to Ak | 2026-10-14 18:51 | 72 |
 | Commit c7d2d9a (G2 rules + extraction) | 2026-10-14 ~18:55 | ~75 |
 | Analyze route, repo, route tests (108 green), UI with 3 demos; build ok; G3 pending Ak's local run | 2026-10-14 19:06 | 86 |
+| Ak: smoke passed (3 calls), 807efc7 pushed, live demos checked by Ak | 2026-10-14 ~19:10 | ~90 |
+| Eval (Ak, secrets tab): 12/12 Haiku 5.5 low, false_ready 0 | 2026-10-14 ~19:20 | ~100 |
+| README + eval files committed; typecheck, lint, 108 tests green | 2026-10-14 19:27 | 107 |

@@ -8,7 +8,7 @@ export default function Home() {
         <p className="text-sm text-muted-foreground">
           Paste a customer enquiry for hex bolts or screws. The model only reads the email and extracts what was asked
           for, with evidence. Fixed rules and an exact catalogue lookup decide each line: ready to quote, clarification
-          required, or no compliant match. A person reviews every draft.
+          required, or no compliant match. Every draft needs human review before anything is sent.
         </p>
         <ul className="list-disc pl-5 text-sm text-muted-foreground">
           <li>The catalogue, prices and stock are synthetic demo data.</li>

@@ -50,7 +50,7 @@ async function lookupLine(s: LineSpec, lookup: Lookup): Promise<{ hits: RuleHit[
   if (s.standard === "ISO 4017" || s.standard === "ISO 4014") {
     const rows = await lookup({ ...base, standard: s.standard });
     const hit = r7Rows(rows, describe(base, s.standard));
-    return hit ? { hits: [hit], product: null } : { hits: [], product: rows[0] };
+    return hit ? { hits: [hit], product: null } : { hits: [], product: { ...rows[0] } };
   }
   const [full, partial] = await Promise.all([
     lookup({ ...base, standard: "ISO 4017" }),
@@ -60,7 +60,7 @@ async function lookupLine(s: LineSpec, lookup: Lookup): Promise<{ hits: RuleHit[
   const [standard, rows] = full.length > 0 ? (["ISO 4017", full] as const) : (["ISO 4014", partial] as const);
   const hit = r7Rows(rows, describe(base));
   if (hit) return { hits: [hit], product: null };
-  return { hits: [r11OneStandard(standard)], product: rows[0] };
+  return { hits: [r11OneStandard(standard)], product: { ...rows[0] } };
 }
 
 export async function decideRfq(email: string, extraction: Extraction, lookup: Lookup): Promise<DecidedRfq> {

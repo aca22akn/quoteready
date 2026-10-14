@@ -133,7 +133,7 @@ No time-saving or money-saving claims are made.
   - It over-refuses: a negation ("not coastal") and words like "pier" still raise the flag, and a coastal word belonging to another line can refuse an A2 line.
   - It also misses environments not on the list, such as a swimming pool fence (see the live probes).
 - **The Sonnet fallback was never exercised live.** It is covered only by mocked route tests and one smoke call.
-- **Body tests:** no test covers a request with no body or a JSON body without a `text` field. Both should return 400 BAD_REQUEST by design.
+- **Body tests:** a JSON body without a `text` field was checked manually on the live app (body `{}` returned 400). No automated test covers it. A request with no body at all was not tested; it returns 400 BAD_REQUEST by design.
 - **The eval:** see the cautions under Eval above.
 - **The cost figure** counts extraction tokens at list price only, excluding hosting.
 - **Approve and reject were not built,** so "human review" is a label only.
@@ -165,7 +165,7 @@ No time-saving or money-saving claims are made.
 - **Summary:** planning was drafted beforehand with an AI chat assistant, which also helped draft some prompts to Claude Code. All code was written by Claude Code in this session.
 - **Before the clock:** planning notes, the rule and test tables, the seed spec, the eval set, the brief and this README's outline were prepared with Claude in a separate chat. A throwaway rehearsal project tested the AI call, the database connection, region, deploy and secrets handling; none of its code was copied.
 - **In the logged session:** all product code, SQL, seed data and prompts were written by Claude Code (Opus 5.5) under review.
-- **Advisor:** a separate Claude chat reviewed the work during the session and wrote no code, SQL or prompts.
+- **Advisor:** a separate Claude chat reviewed the work during the session. It drafted prompts that Ak pasted into Claude Code. It also supplied a few SQL and PowerShell commands that Ak ran himself: the constraint fix, check queries, and git and deploy commands. All product code in this repo, including `db/schema.sql` and `db/seed.sql`, was written by Claude Code in this session.
 - **The `cn` dependency** comes from `shadcn init` (published by shadcn, source github.com/shadcn-ui/cn), not chosen separately.
 
 ## Run it locally
